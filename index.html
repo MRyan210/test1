@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang= "en">
     <head>
-<meta charset ="UTF-8">
-<meta http-equiv="x">
-<meta name="My taks">
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 <title>MY CRUD TASK LIST</title>
 <link rel="stylesheet" href="style.css">
@@ -13,21 +14,22 @@
 <body>
     <header>
 
-        <h1>My task Planner </h1>
-        <form name="task_form" id="new_task-form" class="new_task-form">
-          <input type="text" name="new_task-input" class="task-input" id="new_task-input" placeholder="What are you planning"> 
-          <input type="submit" id="new_task-submit" value="Add Task" class="new_task_submit">
-        
+        <h1 class="task_list_main">My task Planner </h1>
+        <form name="task_form" id="new-task-form" class="new_task_form">
+          <input type="text" name="new-task-input" class="task_input" id="new-task-input" placeholder="What are you planning"/> 
+          
+          <input type="submit" id="new-task-submit" class = "task_add" value="Add Task" />
+
         </form>
         <main>
             <section>
-                <h2>My Current Task</h2>
+                <h2 class = "task_list_header">My Current Task</h2>
                 <div id="tasks" class="tasks">
 
                 </div>
             </section>
         </main>
-        <script src="script,js"></script>
+        <script src="index.js"></script>
 </body>
 
 </html>
