@@ -3,11 +3,24 @@ window.addEventListener('load',()=>{
 const form = document.querySelector("#new-task-form");
 const input = document.querySelector("#new-task-input");
 const list_el = document.querySelector('#tasks');
-const error_el = document.getElementById("error");
-
+var counter = 0;
 
 form.addEventListener('submit',(e) =>{
+    counter++;
     e.preventDefault();
+
+    
+    const tasks = input.value;
+        if (tasks == "") {
+            window.alert("Please enter some Tasks");
+            return false;
+        }
+
+        // COUNTER
+
+        const task = counter + ' . ' + input.value;
+        const task_el = document.createElement('div');
+        task_el.classList.add('task');
 
     if(document.getElementById("new-task-input").value.length == 0)
     {
@@ -17,9 +30,7 @@ form.addEventListener('submit',(e) =>{
     
     
 
-    const task = input.value;
-    const task_el = document.createElement('div');
-    task_el.classList.add('task');
+    
 
     const task_content_el = document.createElement('div');
     task_content_el.classList.add('content');
