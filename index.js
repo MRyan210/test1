@@ -3,10 +3,19 @@ window.addEventListener('load',()=>{
 const form = document.querySelector("#new-task-form");
 const input = document.querySelector("#new-task-input");
 const list_el = document.querySelector('#tasks');
+const error_el = document.getElementById("error");
 
 
 form.addEventListener('submit',(e) =>{
     e.preventDefault();
+
+    if(document.getElementById("new-task-input").value.length == 0)
+    {
+          window.alert(" Please enter a Task")
+          return false;
+    }
+    
+    
 
     const task = input.value;
     const task_el = document.createElement('div');
@@ -50,7 +59,6 @@ form.addEventListener('submit',(e) =>{
     task_edit_el.addEventListener('click', (e)=>{
 
         if(task_edit_el.innerText.toLowerCase()=="edit"){
-
         task_edit_el.innerText='Save';
         task_input_el.removeAttribute("readonly");
         task_input_el.focus();
@@ -65,8 +73,7 @@ form.addEventListener('submit',(e) =>{
     task_del_el.addEventListener('click', (e)=>{
         list_el.removeChild(task_el);
 
-    });
-
+    });  
 
 });
 
